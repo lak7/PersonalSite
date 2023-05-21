@@ -23,9 +23,9 @@ window.addEventListener("mousemove", (e) => {
 
         console.log(speedx);
         el.style.transform = `translateX(calc(-50% + ${
-            -xValue * speedx
+            xValue * speedx * 0.3
         }px)) translateY(calc(-50% + ${
-                yValue * speedy
+                yValue * speedy * 0.3
             }px)) perspective(2300px)` ;
     });
 });
