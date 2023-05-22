@@ -24,9 +24,22 @@ window.addEventListener("mousemove", (e) => {
 
         console.log(speedx);
         el.style.transform = `translateX(calc(-50% + ${
-            xValue * speedx * 0.3
+            -xValue * speedx * 0.3
         }px)) translateY(calc(-50% + ${
                 yValue * speedy * 0.3
             }px)) perspective(2300px)` ;
     });
+});
+
+let timeline = gsap.timeline();
+
+parallax_el.forEach((el) => {
+    timeline.from(
+        el,
+        {
+            top: `${el.offsetHeight / 2 + +el.dataset.distance}px`,
+            duration: 1,
+        },
+        "1"
+    );
 });
